@@ -13,7 +13,7 @@ namespace exerciciosVSTO
     {
         static Word.Document doc = Globals.ThisAddIn.Application.ActiveDocument;
 
-        public static void salvarComoPDF(){
+        public static void SalvarComoPDF(){
            
             string sfileName_Document = doc.Name;
             string sPath = doc.Path;
@@ -21,9 +21,20 @@ namespace exerciciosVSTO
             doc.ExportAsFixedFormat(sFullpath_pdf, Word.WdExportFormat.wdExportFormatPDF, OpenAfterExport: true);
         }
 
-        public static void inserirImagem() {
+        public static void InserirImagem() {
             Word.Dialog dlg = Globals.ThisAddIn.Application.Dialogs[Word.WdWordDialog.wdDialogInsertPicture];
             dlg.Show();
+        }
+
+        public static void CriarTabela(int linhas, int colunas) {
+
+            Word.Selection sec = Globals.ThisAddIn.Application.Selection;
+            Word.Range selectTable = Globals.ThisAddIn.Application.ActiveDocument.Range(sec.Start, sec.End);
+            Word.Table table = Globals.ThisAddIn.Application.ActiveDocument.Tables.Add(selectTable, linhas, colunas);
+            table.Borders.InsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
+            table.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
+          
+            
         }
                 
     }

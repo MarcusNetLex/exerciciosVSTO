@@ -19,12 +19,18 @@ namespace exerciciosVSTO
 
         private void btnSave_as_PDF_Click(object sender, RibbonControlEventArgs e)
         {
-            RibbonPresenter.salvarComoPDF();
+            RibbonPresenter.SalvarComoPDF();
         }
 
         private void btn_Add_Image_Click(object sender, RibbonControlEventArgs e)
         {
-            RibbonPresenter.inserirImagem();
+            RibbonPresenter.InserirImagem();
+        }
+
+        private void btn_CriarTabela_Click(object sender, RibbonControlEventArgs e)
+        {
+            CreateTable tabela = new CreateTable();
+            tabela.Show();
         }
     }
 }

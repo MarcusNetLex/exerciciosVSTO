@@ -9,6 +9,7 @@ using Microsoft.Office.Tools.Word;
 
 namespace exerciciosVSTO
 {
+
     public partial class ThisAddIn
     {
         private void ThisAddIn_Startup(object sender, System.EventArgs e)

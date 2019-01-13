@@ -38,22 +38,25 @@
             this.group1 = this.Factory.CreateRibbonGroup();
             this.btnSave_as_PDF = this.Factory.CreateRibbonButton();
             this.btn_Add_Image = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
+            this.btn_CriarTabela = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
+            this.group2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
+            this.tab1.Groups.Add(this.group2);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
             // group1
             // 
             this.group1.Items.Add(this.btnSave_as_PDF);
-            this.group1.Items.Add(this.btn_Add_Image);
-            this.group1.Label = "Arquivos";
+            this.group1.Label = "Arquivo";
             this.group1.Name = "group1";
             // 
             // btnSave_as_PDF
@@ -73,6 +76,21 @@
             this.btn_Add_Image.ShowImage = true;
             this.btn_Add_Image.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_Add_Image_Click);
             // 
+            // group2
+            // 
+            this.group2.Items.Add(this.btn_Add_Image);
+            this.group2.Items.Add(this.btn_CriarTabela);
+            this.group2.Label = "Inserir";
+            this.group2.Name = "group2";
+            // 
+            // btn_CriarTabela
+            // 
+            this.btn_CriarTabela.Label = "Add Table";
+            this.btn_CriarTabela.Name = "btn_CriarTabela";
+            this.btn_CriarTabela.OfficeImageId = "TableInsertDialogWord";
+            this.btn_CriarTabela.ShowImage = true;
+            this.btn_CriarTabela.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_CriarTabela_Click);
+            // 
             // Ribbon1
             // 
             this.Name = "Ribbon1";
@@ -83,6 +101,8 @@
             this.tab1.PerformLayout();
             this.group1.ResumeLayout(false);
             this.group1.PerformLayout();
+            this.group2.ResumeLayout(false);
+            this.group2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -93,6 +113,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnSave_as_PDF;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_Add_Image;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_CriarTabela;
     }
 
     partial class ThisRibbonCollection
