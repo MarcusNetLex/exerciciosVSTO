@@ -33,8 +33,26 @@ namespace exerciciosVSTO
             Word.Table table = Globals.ThisAddIn.Application.ActiveDocument.Tables.Add(selectTable, linhas, colunas);
             table.Borders.InsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
             table.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
-          
+                      
+        }
+
+        public static void InvertCase()
+        {
+            Word.Selection sec = Globals.ThisAddIn.Application.Selection;
+            Word.Range invertCase = Globals.ThisAddIn.Application.ActiveDocument.Range(sec.Start, sec.End);
+            int aux = sec.Start;
+            while(aux <= sec.End)
+            {
+                if(invertCase(aux, aux))
+                {
+
+                }
+
+            }
+
             
+            
+
         }
                 
     }

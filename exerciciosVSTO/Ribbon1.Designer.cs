@@ -37,12 +37,15 @@
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.btnSave_as_PDF = this.Factory.CreateRibbonButton();
-            this.btn_Add_Image = this.Factory.CreateRibbonButton();
             this.group2 = this.Factory.CreateRibbonGroup();
+            this.btn_Add_Image = this.Factory.CreateRibbonButton();
             this.btn_CriarTabela = this.Factory.CreateRibbonButton();
+            this.group3 = this.Factory.CreateRibbonGroup();
+            this.btn_InvertCase = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
+            this.group3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
@@ -50,6 +53,7 @@
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
             this.tab1.Groups.Add(this.group2);
+            this.tab1.Groups.Add(this.group3);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
@@ -68,6 +72,13 @@
             this.btnSave_as_PDF.ShowImage = true;
             this.btnSave_as_PDF.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnSave_as_PDF_Click);
             // 
+            // group2
+            // 
+            this.group2.Items.Add(this.btn_Add_Image);
+            this.group2.Items.Add(this.btn_CriarTabela);
+            this.group2.Label = "Inserir";
+            this.group2.Name = "group2";
+            // 
             // btn_Add_Image
             // 
             this.btn_Add_Image.Label = "Add Image";
@@ -76,13 +87,6 @@
             this.btn_Add_Image.ShowImage = true;
             this.btn_Add_Image.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_Add_Image_Click);
             // 
-            // group2
-            // 
-            this.group2.Items.Add(this.btn_Add_Image);
-            this.group2.Items.Add(this.btn_CriarTabela);
-            this.group2.Label = "Inserir";
-            this.group2.Name = "group2";
-            // 
             // btn_CriarTabela
             // 
             this.btn_CriarTabela.Label = "Add Table";
@@ -90,6 +94,19 @@
             this.btn_CriarTabela.OfficeImageId = "TableInsertDialogWord";
             this.btn_CriarTabela.ShowImage = true;
             this.btn_CriarTabela.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_CriarTabela_Click);
+            // 
+            // group3
+            // 
+            this.group3.Items.Add(this.btn_InvertCase);
+            this.group3.Label = "Formatar";
+            this.group3.Name = "group3";
+            // 
+            // btn_InvertCase
+            // 
+            this.btn_InvertCase.Label = "Invert Case";
+            this.btn_InvertCase.Name = "btn_InvertCase";
+            this.btn_InvertCase.OfficeImageId = "ChangeCase";
+            this.btn_InvertCase.ShowImage = true;
             // 
             // Ribbon1
             // 
@@ -103,6 +120,8 @@
             this.group1.PerformLayout();
             this.group2.ResumeLayout(false);
             this.group2.PerformLayout();
+            this.group3.ResumeLayout(false);
+            this.group3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -115,6 +134,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_Add_Image;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_CriarTabela;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group3;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_InvertCase;
     }
 
     partial class ThisRibbonCollection
