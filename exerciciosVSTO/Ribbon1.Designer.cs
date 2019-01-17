@@ -37,30 +37,40 @@
             this.tab1 = this.Factory.CreateRibbonTab();
             this.group1 = this.Factory.CreateRibbonGroup();
             this.btnSave_as_PDF = this.Factory.CreateRibbonButton();
-            this.group2 = this.Factory.CreateRibbonGroup();
+            this.Insert = this.Factory.CreateRibbonGroup();
             this.btn_Add_Image = this.Factory.CreateRibbonButton();
             this.btn_CriarTabela = this.Factory.CreateRibbonButton();
             this.group3 = this.Factory.CreateRibbonGroup();
             this.btn_InvertCase = this.Factory.CreateRibbonButton();
+            this.group4 = this.Factory.CreateRibbonGroup();
+            this.btn_FindReplace = this.Factory.CreateRibbonButton();
+            this.group5 = this.Factory.CreateRibbonGroup();
+            this.btn_AddField = this.Factory.CreateRibbonButton();
+            this.btn_AddSpam = this.Factory.CreateRibbonButton();
+            this.btn_AddQualification = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
-            this.group2.SuspendLayout();
+            this.Insert.SuspendLayout();
             this.group3.SuspendLayout();
+            this.group4.SuspendLayout();
+            this.group5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
-            this.tab1.Groups.Add(this.group2);
+            this.tab1.Groups.Add(this.Insert);
             this.tab1.Groups.Add(this.group3);
+            this.tab1.Groups.Add(this.group4);
+            this.tab1.Groups.Add(this.group5);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
             // group1
             // 
             this.group1.Items.Add(this.btnSave_as_PDF);
-            this.group1.Label = "Arquivo";
+            this.group1.Label = "File";
             this.group1.Name = "group1";
             // 
             // btnSave_as_PDF
@@ -72,12 +82,12 @@
             this.btnSave_as_PDF.ShowImage = true;
             this.btnSave_as_PDF.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnSave_as_PDF_Click);
             // 
-            // group2
+            // Insert
             // 
-            this.group2.Items.Add(this.btn_Add_Image);
-            this.group2.Items.Add(this.btn_CriarTabela);
-            this.group2.Label = "Inserir";
-            this.group2.Name = "group2";
+            this.Insert.Items.Add(this.btn_Add_Image);
+            this.Insert.Items.Add(this.btn_CriarTabela);
+            this.Insert.Label = "Inserir";
+            this.Insert.Name = "Insert";
             // 
             // btn_Add_Image
             // 
@@ -98,7 +108,7 @@
             // group3
             // 
             this.group3.Items.Add(this.btn_InvertCase);
-            this.group3.Label = "Formatar";
+            this.group3.Label = "Format";
             this.group3.Name = "group3";
             // 
             // btn_InvertCase
@@ -107,6 +117,47 @@
             this.btn_InvertCase.Name = "btn_InvertCase";
             this.btn_InvertCase.OfficeImageId = "ChangeCase";
             this.btn_InvertCase.ShowImage = true;
+            this.btn_InvertCase.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_InvertCase_Click);
+            // 
+            // group4
+            // 
+            this.group4.Items.Add(this.btn_FindReplace);
+            this.group4.Label = "Find and Replace";
+            this.group4.Name = "group4";
+            // 
+            // btn_FindReplace
+            // 
+            this.btn_FindReplace.Label = "Find and Replace";
+            this.btn_FindReplace.Name = "btn_FindReplace";
+            this.btn_FindReplace.OfficeImageId = "FindDialog";
+            this.btn_FindReplace.ShowImage = true;
+            this.btn_FindReplace.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_FindReplace_Click);
+            // 
+            // group5
+            // 
+            this.group5.Items.Add(this.btn_AddField);
+            this.group5.Items.Add(this.btn_AddSpam);
+            this.group5.Items.Add(this.btn_AddQualification);
+            this.group5.Label = "Field and Span";
+            this.group5.Name = "group5";
+            // 
+            // btn_AddField
+            // 
+            this.btn_AddField.Label = "Add Field";
+            this.btn_AddField.Name = "btn_AddField";
+            this.btn_AddField.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_AddField_Click);
+            // 
+            // btn_AddSpam
+            // 
+            this.btn_AddSpam.Label = "Add Span";
+            this.btn_AddSpam.Name = "btn_AddSpam";
+            this.btn_AddSpam.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_AddSpam_Click);
+            // 
+            // btn_AddQualification
+            // 
+            this.btn_AddQualification.Label = "Add Qualification";
+            this.btn_AddQualification.Name = "btn_AddQualification";
+            this.btn_AddQualification.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btn_AddQualification_Click);
             // 
             // Ribbon1
             // 
@@ -118,10 +169,14 @@
             this.tab1.PerformLayout();
             this.group1.ResumeLayout(false);
             this.group1.PerformLayout();
-            this.group2.ResumeLayout(false);
-            this.group2.PerformLayout();
+            this.Insert.ResumeLayout(false);
+            this.Insert.PerformLayout();
             this.group3.ResumeLayout(false);
             this.group3.PerformLayout();
+            this.group4.ResumeLayout(false);
+            this.group4.PerformLayout();
+            this.group5.ResumeLayout(false);
+            this.group5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -132,10 +187,16 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnSave_as_PDF;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_Add_Image;
-        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup Insert;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_CriarTabela;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group3;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_InvertCase;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group4;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_FindReplace;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group5;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_AddField;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_AddSpam;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btn_AddQualification;
     }
 
     partial class ThisRibbonCollection
