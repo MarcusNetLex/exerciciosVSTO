@@ -1,6 +1,6 @@
 ﻿namespace exerciciosVSTO
 {
-    partial class AddField
+    partial class FieldView
     {
         /// <summary>
         /// Required designer variable.

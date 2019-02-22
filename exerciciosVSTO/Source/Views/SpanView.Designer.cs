@@ -1,6 +1,6 @@
 ﻿namespace exerciciosVSTO
 {
-    partial class AddSpan
+    partial class SpanView
     {
         /// <summary>
         /// Required designer variable.

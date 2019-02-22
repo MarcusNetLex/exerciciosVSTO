@@ -1,6 +1,6 @@
 ﻿namespace exerciciosVSTO
 {
-    partial class FindPanel
+    partial class SearchView
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -91,7 +91,6 @@
             this.panel_Find.Name = "panel_Find";
             this.panel_Find.Size = new System.Drawing.Size(319, 94);
             this.panel_Find.TabIndex = 4;
-            this.panel_Find.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Find_Paint);
             // 
             // btn_ReplaceAll
             // 

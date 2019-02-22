@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Office.Tools.Word;
 using Word = Microsoft.Office.Interop.Word;
-
+using exerciciosVSTO.Source.Views;
 //----< Word Addin >---- 
 using System.IO;
 using Microsoft.Office.Tools.Ribbon;
@@ -14,7 +14,7 @@ namespace exerciciosVSTO
 {
     public partial class Ribbon1
     {
-        private FindPanel findUserControl = new FindPanel();
+        private SearchView findUserControl = new SearchView();
         private Microsoft.Office.Tools.CustomTaskPane findCustomTaskPane;
 
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
@@ -47,29 +47,23 @@ namespace exerciciosVSTO
 
         private void btnSave_as_PDF_Click(object sender, RibbonControlEventArgs e)
         {
-            if (Globals.ThisAddIn.Application.ActiveDocument.Saved) { RibbonPresenter.SalvarComoPDF(); }
-            else
-            {
-                Word.Dialog dlg = Globals.ThisAddIn.Application.Dialogs[Word.WdWordDialog.wdDialogFileSaveAs];
-                dlg.Show();
-                if (Globals.ThisAddIn.Application.ActiveDocument.Saved) { RibbonPresenter.SalvarComoPDF(); }
-            }
+            PdfView pdfview = new PdfView();
         }
 
         private void btn_Add_Image_Click(object sender, RibbonControlEventArgs e)
         {
-            RibbonPresenter.InserirImagem();
+            ImageView imageview = new ImageView();            
         }
 
         private void btn_CriarTabela_Click(object sender, RibbonControlEventArgs e)
         {
-            CreateTable tabela = new CreateTable();
+            TableView tabela = new TableView();
             tabela.Show();
         }
 
         private void btn_InvertCase_Click(object sender, RibbonControlEventArgs e)
         {
-            RibbonPresenter.InvertCase();
+            CaseView caseview = new CaseView();
         }
 
         private void btn_FindReplace_Click(object sender, RibbonControlEventArgs e)
@@ -80,20 +74,20 @@ namespace exerciciosVSTO
 
         private void btn_AddField_Click(object sender, RibbonControlEventArgs e)
         {
-            AddField field = new AddField();
+            FieldView field = new FieldView();
             field.Show();
         }
 
         private void btn_AddSpam_Click(object sender, RibbonControlEventArgs e)
         {
-            AddSpan span = new AddSpan();
+            SpanView span = new SpanView();
             span.Show();
         }
 
         private void btn_AddQualification_Click(object sender, RibbonControlEventArgs e)
         {
-            Qualificacao qual = new Qualificacao();
-            qual.Show();
+            QualView qualification = new QualView();
+            qualification.Show();
         }
     }
 }

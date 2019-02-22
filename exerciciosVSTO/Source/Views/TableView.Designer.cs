@@ -1,6 +1,6 @@
 ﻿namespace exerciciosVSTO
 {
-    partial class CreateTable
+    partial class TableView
     {
         /// <summary>
         /// Required designer variable.

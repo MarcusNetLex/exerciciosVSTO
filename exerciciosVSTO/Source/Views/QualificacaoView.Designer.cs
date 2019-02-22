@@ -1,6 +1,6 @@
 ﻿namespace exerciciosVSTO
 {
-    partial class Qualificacao
+    partial class QualView
     {
         /// <summary>
         /// Required designer variable.
